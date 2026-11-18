@@ -14,6 +14,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar, type NavTabId } from "@/components/layout/app-sidebar"
 import { TopNavbar } from "@/components/layout/top-navbar"
+import { TestbedView } from "@/components/testbed/testbed-view"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -437,60 +438,14 @@ export default function App() {
               </div>
             )}
 
-            {/* View 4: Benchmark Tab */}
-            {activeTab === "benchmark" && (
-              <div className="space-y-4">
-                <div>
-                  <h2 className="text-2xl font-bold tracking-tight">Benchmark Komparatif (Cloud vs Edge)</h2>
-                  <p className="text-sm text-neutral-500">
-                    Pengujian komparasi berpasangan latensi, keandalan jaringan, dan konsumsi memori ($N=300$).
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Latensi Inferensi Lokal (Edge)
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold text-emerald-600">&lt; 5 µs</div>
-                      <p className="text-xs text-neutral-500 mt-1">240 MHz Xtensa LX7 (Operasi Linier O(p))</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Round-Trip Time (Cloud MQTT)
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold text-amber-600">45 - 120 ms</div>
-                      <p className="text-xs text-neutral-500 mt-1">Dipengaruhi jitter jaringan & overhead TCP</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Ketahanan Outage (Wi-Fi PAR)
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold text-sky-600">100% vs 0%</div>
-                      <p className="text-xs text-neutral-500 mt-1">Edge tetap aktif saat koneksi nirkabel putus</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+            {/* View 4: Testbed & Benchmark */}
+            {(activeTab === "testbed" || activeTab === "benchmark") && (
+              <TestbedView />
             )}
 
             {/* Other Tabs Placeholder */}
             {(activeTab === "sensor" ||
               activeTab === "telemetri" ||
-              activeTab === "testbed" ||
               activeTab === "irigasi" ||
               activeTab === "riwayat-sesi" ||
               activeTab === "perangkat" ||
