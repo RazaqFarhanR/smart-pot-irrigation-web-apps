@@ -3,7 +3,6 @@ import {
   CloudRain,
   Droplets,
   HardDrive,
-  Info,
   Power,
   Sun,
   Thermometer,
@@ -21,6 +20,8 @@ import { DeviceView } from "@/components/device/device-view"
 import { TelemetryView } from "@/components/telemetry/telemetry-view"
 import { AccuracyView } from "@/components/accuracy/accuracy-view"
 import { IrrigationView } from "@/components/irrigation/irrigation-view"
+import { HistoryView } from "@/components/history/history-view"
+import { ExportView } from "@/components/export/export-view"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -379,27 +380,14 @@ export default function App() {
               <IrrigationView />
             )}
 
-            {/* Other Tabs Placeholder */}
-            {(activeTab === "riwayat-sesi" ||
-              activeTab === "ekspor-data") && (
-              <Card className="p-8 text-center border-dashed border-2 border-neutral-200 dark:border-neutral-800">
-                <div className="flex flex-col items-center justify-center space-y-3">
-                  <div className="p-3 bg-neutral-100 rounded-full dark:bg-neutral-900 text-neutral-500">
-                    <Info className="size-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold capitalize">Modul {activeTab} Siap Diimplementasikan</h3>
-                  <p className="text-sm text-neutral-500 max-w-md">
-                    Tab navigasi sudah aktif dan terhubung. Anda dapat kembali ke{" "}
-                    <button
-                      onClick={() => setActiveTab("overview")}
-                      className="text-emerald-600 font-semibold underline underline-offset-4 cursor-pointer"
-                    >
-                      Overview
-                    </button>{" "}
-                    kapan saja.
-                  </p>
-                </div>
-              </Card>
+            {/* View 9: History View */}
+            {activeTab === "riwayat-sesi" && (
+              <HistoryView />
+            )}
+
+            {/* View 10: Export View */}
+            {activeTab === "ekspor-data" && (
+              <ExportView />
             )}
           </main>
         </SidebarInset>
