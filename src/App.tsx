@@ -19,6 +19,7 @@ import { TestbedView } from "@/components/testbed/testbed-view"
 import { DeployOtaView } from "@/components/ota/deploy-ota-view"
 import { DeviceView } from "@/components/device/device-view"
 import { TelemetryView } from "@/components/telemetry/telemetry-view"
+import { AccuracyView } from "@/components/accuracy/accuracy-view"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -349,52 +350,7 @@ export default function App() {
 
             {/* View 3: Akurasi Tab */}
             {activeTab === "akurasi" && (
-              <div className="space-y-4">
-                <div>
-                  <h2 className="text-2xl font-bold tracking-tight">Evaluasi Akurasi & Paritas Model</h2>
-                  <p className="text-sm text-neutral-500">
-                    Verifikasi presisi numerik antara inferensi lokal mikrokontroler (float 32-bit) dan komputasi awan (float 64-bit).
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Koefisien Determinasi (R²)
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold text-emerald-600">0.9894</div>
-                      <p className="text-xs text-neutral-500 mt-1">Ridge Regression (α = 10.0)</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Root Mean Squared Error (RMSE)
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold text-indigo-600">1.66%</div>
-                      <p className="text-xs text-neutral-500 mt-1">MAE: 0.4279% pada data uji</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Paritas Komputasi (Δy)
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold text-teal-600">&lt; 10⁻⁵</div>
-                      <p className="text-xs text-neutral-500 mt-1">Deviasi pembulatan IEEE-754 teruji aman</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+              <AccuracyView />
             )}
 
             {/* View 4: Testbed & Benchmark */}
