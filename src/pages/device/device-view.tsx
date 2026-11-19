@@ -37,7 +37,7 @@ export function DeviceView() {
 
   // Pinout mapping sensor pada pot pintar
   const pinoutList = [
-    { pin: "GPIO 1", type: "ADC1_CH0", function: "Sensor Kandungan Air Tanah", target: "Kapasitif V2.0 Analog (0-3.3V)", status: "Active" },
+    { pin: "GPIO 1", type: "ADC1_CH0", function: "Sensor Kandungan Air dalam Tanah", target: "Kapasitif V2.0 Analog (0-3.3V)", status: "Active" },
     { pin: "GPIO 4", type: "I2C SDA", function: "Jalur Data I2C", target: "BH1750 (Sensor Intensitas Cahaya)", status: "Active" },
     { pin: "GPIO 5", type: "I2C SCL", function: "Jalur Clock I2C", target: "BH1750 (Clock 400 kHz)", status: "Active" },
     { pin: "GPIO 14", type: "OneWire / GPIO", function: "Suhu & Kelembaban", target: "DHT22 / BME280 Mikroklimat", status: "Active" },
@@ -71,7 +71,7 @@ export function DeviceView() {
             </Badge>
           </div>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Pembuktian kelayakan komputasional (*feasibility proof*) dan jejak memori pada mikrokontroler pot pintar
+            Diagnostik spesifikasi perangkat keras, alokasi memori, dan serial monitor ESP32-S3
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export function DeviceView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Arsitektur Prosesor
+              Prosesor / SoC
             </CardTitle>
             <div className="p-1.5 rounded-md bg-indigo-500/10 text-indigo-500">
               <Cpu className="size-4" />
@@ -118,7 +118,7 @@ export function DeviceView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Memori SRAM Bebas (Heap)
+              Free Heap (SRAM)
             </CardTitle>
             <div className="p-1.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
               <HardDrive className="size-4" />
@@ -138,7 +138,7 @@ export function DeviceView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Kualitas Link Wi-Fi
+              Koneksi Wi-Fi
             </CardTitle>
             <div className="p-1.5 rounded-md bg-sky-500/10 text-sky-500">
               <Wifi className="size-4" />
@@ -158,7 +158,7 @@ export function DeviceView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Suhu Internal Silikon
+              Suhu Chip ESP32-S3
             </CardTitle>
             <div className="p-1.5 rounded-md bg-orange-500/10 text-orange-500">
               <Thermometer className="size-4" />

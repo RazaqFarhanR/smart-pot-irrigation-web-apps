@@ -152,7 +152,7 @@ export function TelemetryView() {
         <div>
           <div className="flex items-center gap-2">
             <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
-              Aliran Log Telemetri MQTT
+              Live Stream Telemetri MQTT
             </h2>
             <Badge variant="outline" className="text-xs bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300">
               <span className="size-1.5 rounded-full bg-amber-500 animate-pulse mr-1" />
@@ -200,7 +200,7 @@ export function TelemetryView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Kesehatan Ingestion
+              Status Ingestion
             </CardTitle>
             <div className="p-1.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
               <CheckCircle2 className="size-4" />
@@ -220,7 +220,7 @@ export function TelemetryView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Rata-rata Muatan (Payload)
+              Rata-rata Ukuran Payload
             </CardTitle>
             <div className="p-1.5 rounded-md bg-indigo-500/10 text-indigo-500">
               <Radio className="size-4" />
@@ -317,7 +317,7 @@ export function TelemetryView() {
                 className="h-9 gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800 cursor-pointer"
               >
                 <Download className="size-3.5" />
-                <span>Unduh Log</span>
+                <span>Export CSV</span>
               </Button>
             </div>
           </div>
@@ -331,13 +331,13 @@ export function TelemetryView() {
                 <TableRow>
                   <TableHead className="w-16">Seq</TableHead>
                   <TableHead>Waktu Terkirim</TableHead>
-                  <TableHead>Kandungan Air Tanah</TableHead>
+                  <TableHead>Kandungan Air dalam Tanah</TableHead>
                   <TableHead>Suhu (°C)</TableHead>
                   <TableHead>Kelembaban (%)</TableHead>
                   <TableHead>Cahaya (Lux)</TableHead>
                   <TableHead>Status Pompa</TableHead>
                   <TableHead>Wi-Fi</TableHead>
-                  <TableHead className="text-right">Inspeksi</TableHead>
+                  <TableHead className="text-right">Detail</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -417,7 +417,7 @@ export function TelemetryView() {
               <div className="flex items-center gap-2">
                 <FileCode className="size-5 text-indigo-500" />
                 <DialogTitle className="text-base">
-                  Inspektor Paket Telemetri #{selectedRecord?.record_seq}
+                  Detail Paket Telemetri #{selectedRecord?.record_seq}
                 </DialogTitle>
               </div>
               <Badge variant="outline" className="font-mono text-xs">
@@ -425,7 +425,7 @@ export function TelemetryView() {
               </Badge>
             </div>
             <DialogDescription className="text-xs">
-              Muatan data mentah JSON yang dikirimkan melalui protokol MQTT v3.1.1
+              Payload JSON mentah yang dikirimkan via protokol MQTT v3.1.1
             </DialogDescription>
           </DialogHeader>
 
@@ -467,7 +467,7 @@ export function TelemetryView() {
                   className="gap-1.5 text-xs cursor-pointer"
                 >
                   {copied ? <Check className="size-3.5 text-emerald-600" /> : <Copy className="size-3.5" />}
-                  <span>{copied ? "Tersalin ke Clipboard" : "Salin JSON"}</span>
+                  <span>{copied ? "Tersalin!" : "Salin JSON"}</span>
                 </Button>
               </div>
             </div>

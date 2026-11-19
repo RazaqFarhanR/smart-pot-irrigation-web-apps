@@ -82,7 +82,7 @@ export function DeployOtaView({ onNavigateToTestbed }: DeployOtaViewProps) {
             </Badge>
           </div>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Pembaruan bobot linear model di ESP32-S3 secara nirkabel tanpa *re-flashing* firmware biner
+            Update koefisien model linear di ESP32-S3 via OTA tanpa perlu re-flash firmware
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export function DeployOtaView({ onNavigateToTestbed }: DeployOtaViewProps) {
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-500">
-            1. Pilih Model Prediksi dari Katalog
+            1. Pilih Model dari Katalog
           </h3>
           <span className="text-xs text-neutral-400 font-mono">
             {modelPresets.length} Model Tersedia
@@ -291,7 +291,7 @@ export function DeployOtaView({ onNavigateToTestbed }: DeployOtaViewProps) {
             {/* Specifications Summary */}
             <div className="rounded-lg bg-neutral-50 dark:bg-neutral-950 p-3 border border-neutral-100 dark:border-neutral-800 space-y-1.5 text-xs">
               <div className="flex justify-between text-neutral-600 dark:text-neutral-400">
-                <span>Ukuran Muatan (Payload):</span>
+                <span>Ukuran Payload:</span>
                 <span className="font-mono font-semibold text-neutral-900 dark:text-neutral-100">
                   {activeModel.payload_bytes} Bytes
                 </span>
@@ -349,7 +349,7 @@ export function DeployOtaView({ onNavigateToTestbed }: DeployOtaViewProps) {
                   onClick={onNavigateToTestbed}
                   className="w-full gap-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs cursor-pointer animate-in fade-in"
                 >
-                  <span>Buka Tab Testbed untuk Menguji Model Ini (N=300)</span>
+                  <span>Uji Model Ini di Testbed (N=300)</span>
                   <ArrowRight className="size-3.5" />
                 </Button>
               )}
@@ -364,7 +364,7 @@ export function DeployOtaView({ onNavigateToTestbed }: DeployOtaViewProps) {
               <div className="flex items-center gap-2">
                 <FileCode className="size-4 text-neutral-500" />
                 <CardTitle className="text-base font-semibold">
-                  Inspektor Paket MQTT (Payload JSON)
+                  Inspeksi Payload JSON MQTT
                 </CardTitle>
               </div>
               <Button

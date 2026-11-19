@@ -24,22 +24,22 @@ export interface ModelPreset {
 }
 
 const baseFeatureDefinitions = [
-  { index: 1, name: "soil_lag_1", label: "Kandungan Air Tanah (t-1)", category: "soil" as const, description: "Nilai kelembaban tanah 10 menit sebelumnya" },
-  { index: 2, name: "soil_lag_2", label: "Kandungan Air Tanah (t-2)", category: "soil" as const, description: "Nilai kelembaban tanah 20 menit sebelumnya" },
-  { index: 3, name: "soil_lag_3", label: "Kandungan Air Tanah (t-3)", category: "soil" as const, description: "Nilai kelembaban tanah 30 menit sebelumnya" },
-  { index: 4, name: "soil_roll_mean_3", label: "Rata-rata Bergerak Tanah", category: "soil" as const, description: "Tren rata-rata 3 periode waktu" },
-  { index: 5, name: "soil_roll_std_3", label: "Volatilitas Tanah (Std Dev)", category: "soil" as const, description: "Fluktuasi pembacaan sensor tanah" },
+  { index: 1, name: "soil_lag_1", label: "Kandungan Air dalam Tanah (t-1)", category: "soil" as const, description: "Kandungan Air dalam Tanah 10 menit sebelumnya" },
+  { index: 2, name: "soil_lag_2", label: "Kandungan Air dalam Tanah (t-2)", category: "soil" as const, description: "Kandungan Air dalam Tanah 20 menit sebelumnya" },
+  { index: 3, name: "soil_lag_3", label: "Kandungan Air dalam Tanah (t-3)", category: "soil" as const, description: "Kandungan Air dalam Tanah 30 menit sebelumnya" },
+  { index: 4, name: "soil_roll_mean_3", label: "Rata-rata Bergerak Kandungan Air", category: "soil" as const, description: "Tren rata-rata 3 periode waktu" },
+  { index: 5, name: "soil_roll_std_3", label: "Volatilitas Kandungan Air (Std Dev)", category: "soil" as const, description: "Fluktuasi pembacaan sensor tanah" },
   { index: 6, name: "temp_lag_1", label: "Suhu Lingkungan (t-1)", category: "climate" as const, description: "Kondisi termal atmosfer pot" },
   { index: 7, name: "temp_roll_mean_3", label: "Rata-rata Bergerak Suhu", category: "climate" as const, description: "Tren suhu 30 menit terakhir" },
   { index: 8, name: "humidity_lag_1", label: "Kelembaban Udara (t-1)", category: "climate" as const, description: "RH lingkungan tanaman" },
   { index: 9, name: "humidity_roll_mean_3", label: "Rata-rata Bergerak RH", category: "climate" as const, description: "Tren RH mikro 30 menit terakhir" },
-  { index: 10, name: "light_lag_1", label: "Intensitas Cahaya (t-1)", category: "climate" as const, description: "Fluks radiasi foton fotosintesis" },
+  { index: 10, name: "light_lag_1", label: "Intensitas Cahaya (t-1)", category: "climate" as const, description: "Fluks intensitas cahaya (Lux)" },
   { index: 11, name: "sin_time", label: "Siklus Sirkadian Sinus", category: "circadian" as const, description: "Proyeksi siklus diurnal siang hari" },
   { index: 12, name: "cos_time", label: "Siklus Sirkadian Kosinus", category: "circadian" as const, description: "Proyeksi siklus fotoperiode malam" },
   { index: 13, name: "vpd_proxy", label: "Interaksi Termal (VPD Proxy)", category: "interaction" as const, description: "Interaksi suhu dan defisit tekanan uap" },
-  { index: 14, name: "soil_diff_1", label: "Delta Tanah (t-1 vs t-2)", category: "soil" as const, description: "Laju turunan pengeringan tanah" },
+  { index: 14, name: "soil_diff_1", label: "Delta Kandungan Air (t-1 vs t-2)", category: "soil" as const, description: "Laju penurunan Kandungan Air dalam Tanah" },
   { index: 15, name: "temp_diff_1", label: "Delta Suhu (t-1 vs t-2)", category: "climate" as const, description: "Laju perubahan gradien suhu" },
-  { index: 16, name: "is_daytime", label: "Flag Fotoperiode Siang", category: "circadian" as const, description: "Variabel biner radiasi matahari aktif" },
+  { index: 16, name: "is_daytime", label: "Flag Waktu Siang", category: "circadian" as const, description: "Variabel biner intensitas cahaya aktif" },
 ]
 
 export const modelPresets: ModelPreset[] = [

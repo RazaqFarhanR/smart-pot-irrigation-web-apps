@@ -172,7 +172,7 @@ export function HistoryView() {
             className="cursor-pointer bg-emerald-600 hover:bg-emerald-700 text-white gap-1.5"
           >
             <Download className="size-3.5" />
-            <span>Unduh Arsip CSV</span>
+            <span>Export CSV</span>
           </Button>
         </div>
       </div>
@@ -203,7 +203,7 @@ export function HistoryView() {
         <Card className="border-neutral-200 dark:border-neutral-800 shadow-xs">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              Model Rekomendasi Bab 4
+              Model Rekomendasi (Bab 4)
             </CardTitle>
             <div className="p-1.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
               <Award className="size-4" />
@@ -243,7 +243,7 @@ export function HistoryView() {
         <Card className="border-neutral-200 dark:border-neutral-800 shadow-xs">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              Kelulusan Hipotesis
+              Status Hipotesis (H1-H3)
             </CardTitle>
             <div className="p-1.5 rounded-md bg-teal-500/10 text-teal-600 dark:text-teal-400">
               <CheckCircle2 className="size-4" />

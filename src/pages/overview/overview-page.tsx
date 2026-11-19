@@ -39,11 +39,11 @@ export function OverviewPage({ data, latest, onNavigateToTelemetry }: OverviewPa
             Overview Sistem &amp; Sensor
           </h2>
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            Pemantauan telemetri waktu-nyata pot tanaman cabai via ESP32-S3
+            Monitoring telemetri real-time pot tanaman cabai via ESP32-S3
           </p>
         </div>
         <div className="flex items-center gap-2 text-xs text-neutral-400 dark:text-neutral-500 font-mono tabular-nums">
-          <span>Transmisi Terakhir:</span>
+          <span>Update Terakhir:</span>
           <span className="text-neutral-700 dark:text-neutral-300 font-semibold">
             {new Date(latest.timestamp).toLocaleTimeString("id-ID")}
           </span>
@@ -70,7 +70,7 @@ export function OverviewPage({ data, latest, onNavigateToTelemetry }: OverviewPa
           title="Suhu Lingkungan"
           value={latest.temp_c}
           unit="°C"
-          subtext="Sensor termal mikroklimat terkalibrasi"
+          subtext="Sensor suhu DHT22 terkalibrasi"
           icon={Thermometer}
           iconColor="text-orange-500"
         />
@@ -79,7 +79,7 @@ export function OverviewPage({ data, latest, onNavigateToTelemetry }: OverviewPa
         <MetricCard
           title="Kelembaban Udara"
           value={`${latest.humidity_pct}%`}
-          subtext="Kelembaban relatif atmosfer mikro"
+          subtext="Sensor kelembaban relatif DHT22"
           icon={CloudRain}
           iconColor="text-sky-500"
         />
@@ -89,7 +89,7 @@ export function OverviewPage({ data, latest, onNavigateToTelemetry }: OverviewPa
           title="Intensitas Cahaya"
           value={latest.light_lux.toLocaleString("id-ID")}
           unit="Lux"
-          subtext="Fluks radiasi fotosintesis (BH1750)"
+          subtext="Sensor intensitas cahaya (BH1750)"
           icon={Sun}
           iconColor="text-amber-500"
         />
@@ -114,21 +114,21 @@ export function OverviewPage({ data, latest, onNavigateToTelemetry }: OverviewPa
         <Card className="border-border/80 shadow-xs bg-card">
           <CardHeader className="pb-2">
             <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
-              <HardDrive className="size-3.5 text-indigo-500" /> Memori Bebas (SRAM)
+              <HardDrive className="size-3.5 text-indigo-500" /> Free Heap (SRAM)
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-xl font-semibold text-foreground font-mono tabular-nums">
               {Math.round(latest.free_heap_bytes / 1024)} KB
             </div>
-            <p className="text-xs text-muted-foreground mt-1">Heap ESP32-S3 terjaga aman</p>
+            <p className="text-xs text-muted-foreground mt-1">Kapasitas heap SRAM normal</p>
           </CardContent>
         </Card>
 
         <Card className="border-border/80 shadow-xs bg-card">
           <CardHeader className="pb-2">
             <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
-              <Power className="size-3.5 text-emerald-500" /> Status Aktuator Pompa
+              <Power className="size-3.5 text-emerald-500" /> Status Pompa (Simulasi Opsi C+)
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -137,7 +137,7 @@ export function OverviewPage({ data, latest, onNavigateToTelemetry }: OverviewPa
                 variant={latest.pump_status === 1 ? "default" : "secondary"}
                 className="font-medium"
               >
-                {latest.pump_status === 1 ? "Aktif Menyiram" : "Standby (Mati)"}
+                {latest.pump_status === 1 ? "Aktif" : "Standby"}
               </Badge>
             </div>
             <p className="text-xs text-muted-foreground mt-1 font-mono tabular-nums">
@@ -153,7 +153,7 @@ export function OverviewPage({ data, latest, onNavigateToTelemetry }: OverviewPa
           <div>
             <CardTitle className="text-base font-semibold">Log Telemetri Terbaru</CardTitle>
             <CardDescription className="text-xs">
-              Paket data telemetri yang diterima via MQTT Ingestion Pipeline
+              Paket telemetri masuk dari topik MQTT
             </CardDescription>
           </div>
           <Button
@@ -162,7 +162,7 @@ export function OverviewPage({ data, latest, onNavigateToTelemetry }: OverviewPa
             onClick={onNavigateToTelemetry}
             className="text-xs h-8 cursor-pointer"
           >
-            Buka Tab Telemetri
+            Lihat Semua Telemetri
           </Button>
         </CardHeader>
         <CardContent>

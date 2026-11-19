@@ -75,7 +75,7 @@ export function AccuracyView() {
             </Badge>
           </div>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Pembuktian empiris akurasi model regresi linier kausal berbobot ringan (*Ridge Regression*) pada data uji tak-terlihat (*ThingSpeak 196075*)
+            Pembuktian empiris akurasi model regresi linier kausal (*Ridge Regression*) pada data uji (*ThingSpeak 196075*)
           </p>
         </div>
 
@@ -106,7 +106,7 @@ export function AccuracyView() {
               0.9894
             </div>
             <p className="mt-1 text-xs text-neutral-500">
-              Pagu proposal: <strong className="text-neutral-700 dark:text-neutral-300">≥ 0.8500</strong> (Sangat Superior)
+              Target proposal: <strong className="text-neutral-700 dark:text-neutral-300">≥ 0.8500</strong> (Superior)
             </p>
           </CardContent>
         </Card>
@@ -115,7 +115,7 @@ export function AccuracyView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Root Mean Squared Error
+              Root Mean Squared Error (RMSE)
             </CardTitle>
             <div className="p-1.5 rounded-md bg-indigo-500/10 text-indigo-500">
               <LineChartIcon className="size-4" />
@@ -135,7 +135,7 @@ export function AccuracyView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Mean Absolute Error
+              Mean Absolute Error (MAE)
             </CardTitle>
             <div className="p-1.5 rounded-md bg-sky-500/10 text-sky-500">
               <TrendingUp className="size-4" />
@@ -146,7 +146,7 @@ export function AccuracyView() {
               0.43%
             </div>
             <p className="mt-1 text-xs text-neutral-500">
-              Rerata selisih absolut pada domain uji
+              Rata-rata error absolut pada data uji
             </p>
           </CardContent>
         </Card>
@@ -166,7 +166,7 @@ export function AccuracyView() {
               &lt; 10⁻⁵
             </div>
             <p className="mt-1 text-xs text-neutral-500">
-              Presisi FPU 32-bit mikrokontroler aman
+              Presisi FPU ESP32-S3 terjaga
             </p>
           </CardContent>
         </Card>

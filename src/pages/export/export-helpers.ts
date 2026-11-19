@@ -42,7 +42,7 @@ export const DATASET_CONFIG: Record<
     ],
   },
   telemetry: {
-    name: "Log Telemetri Sensor Waktu-Nyata (MQTT)",
+    name: "Log Telemetri Sensor Real-Time (MQTT)",
     description: "Riwayat telemetri multi-sensor dari topik smartpot/telemetry",
     recordCount: telemetryData.length,
     columns: [
@@ -79,7 +79,7 @@ export const DATASET_CONFIG: Record<
       { id: "id", label: "ID Kejadian", defaultSelected: true },
       { id: "timestamp", label: "Waktu Simulasi", defaultSelected: true },
       { id: "decision_type", label: "Kebijakan Evaluasi", defaultSelected: true },
-      { id: "trigger_soil_pct", label: "Kandungan Air Pemicu (%)", defaultSelected: true },
+      { id: "trigger_soil_pct", label: "Kandungan Air dalam Tanah Pemicu (%)", defaultSelected: true },
       { id: "predicted_soil_pct", label: "Proyeksi ŷ(t+1) (%)", defaultSelected: true },
       { id: "virtual_volume_ml", label: "Volume Air Virtual (mL)", defaultSelected: true },
       { id: "status", label: "Status Mitigasi", defaultSelected: true },

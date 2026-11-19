@@ -34,21 +34,21 @@ export function ThemeToggle() {
           className={`gap-2 cursor-pointer ${theme === "light" ? "font-semibold text-emerald-600 dark:text-emerald-400" : ""}`}
         >
           <Sun className="size-3.5 text-amber-500" />
-          <span>Terang (Light)</span>
+          <span>Light Mode</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
           className={`gap-2 cursor-pointer ${theme === "dark" ? "font-semibold text-emerald-600 dark:text-emerald-400" : ""}`}
         >
           <Moon className="size-3.5 text-emerald-400" />
-          <span>Gelap (Dark)</span>
+          <span>Dark Mode</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
           className={`gap-2 cursor-pointer ${theme === "system" ? "font-semibold text-emerald-600 dark:text-emerald-400" : ""}`}
         >
           <Laptop className="size-3.5 text-neutral-400" />
-          <span>Sistem (Auto)</span>
+          <span>System Default</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

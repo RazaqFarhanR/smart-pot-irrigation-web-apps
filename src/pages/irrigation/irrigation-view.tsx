@@ -40,7 +40,7 @@ export function IrrigationView() {
             </Badge>
           </div>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Evaluasi keputusan aktuasi prediktif berbasis ambang batas kandungan air tanah tanpa risiko perangkat keras relay fisik
+            Evaluasi simulasi kebijakan irigasi prediktif berbasis ambang batas Kandungan Air dalam Tanah (Opsi C+)
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export function IrrigationView() {
               26.4%
             </div>
             <p className="mt-1 text-xs text-neutral-500">
-              Efisiensi air teoritis vs kontrol reaktif
+              Estimasi efisiensi air vs kontrol reaktif
             </p>
           </CardContent>
         </Card>
@@ -120,7 +120,7 @@ export function IrrigationView() {
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-              Ambang Pemicu Irigasi
+              Ambang Batas Kritis
             </CardTitle>
             <div className="p-1.5 rounded-md bg-amber-500/10 text-amber-500">
               <Zap className="size-4" />
@@ -131,7 +131,7 @@ export function IrrigationView() {
               35.0%
             </div>
             <p className="mt-1 text-xs text-neutral-500">
-              Batas minimum kandungan air tanah cabai
+              Batas minimum Kandungan Air dalam Tanah
             </p>
           </CardContent>
         </Card>

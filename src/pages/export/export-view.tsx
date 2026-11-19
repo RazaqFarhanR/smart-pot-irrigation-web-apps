@@ -180,12 +180,12 @@ export function ExportView() {
             {copied ? (
               <>
                 <Check className="size-3.5 text-emerald-600" />
-                <span className="text-emerald-600 font-medium">Tersalin ke Clipboard!</span>
+                <span className="text-emerald-600 font-medium">Tersalin!</span>
               </>
             ) : (
               <>
                 <Copy className="size-3.5 text-neutral-600" />
-                <span>Salin Teks</span>
+                <span>Salin</span>
               </>
             )}
           </Button>
@@ -197,7 +197,7 @@ export function ExportView() {
             disabled={activeColIds.length === 0}
           >
             <Download className="size-3.5" />
-            <span>Unduh File .{selectedFormat === "latex" ? "tex" : selectedFormat}</span>
+            <span>Download .{selectedFormat === "latex" ? "tex" : selectedFormat}</span>
           </Button>
         </div>
       </div>
@@ -209,10 +209,10 @@ export function ExportView() {
           <CardHeader className="pb-3">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500 flex items-center gap-1.5">
               <Layers className="size-3.5 text-emerald-600" />
-              1. Pilih Dataset Sumber
+              1. Pilih Dataset
             </CardTitle>
             <CardDescription className="text-xs">
-              Pilih data yang ingin diekstraksi
+              Pilih dataset yang akan diekspor
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -252,17 +252,17 @@ export function ExportView() {
           <CardHeader className="pb-3">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500 flex items-center gap-1.5">
               <FileSpreadsheet className="size-3.5 text-blue-600" />
-              2. Format &amp; Batas Sampel
+              2. Format &amp; Limit Sampel
             </CardTitle>
             <CardDescription className="text-xs">
-              Pilih ekstensi file dan limit baris
+              Pilih format file dan batas baris
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Format Selector */}
             <div className="space-y-2">
               <label className="text-xs font-medium text-neutral-700 dark:text-neutral-300 block">
-                Format Berkas Keluaran:
+                Format Ekspor:
               </label>
               <div className="grid grid-cols-3 gap-2">
                 <Button
@@ -310,7 +310,7 @@ export function ExportView() {
             {/* Sample Limit Selector */}
             <div className="space-y-2">
               <label className="text-xs font-medium text-neutral-700 dark:text-neutral-300 block">
-                Batas Jumlah Sampel:
+                Jumlah Sampel (Limit):
               </label>
               <Select
                 value={sampleLimit.toString()}
@@ -320,7 +320,7 @@ export function ExportView() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="300">Semua Baris (Maks. 300 Sampel)</SelectItem>
+                  <SelectItem value="300">Semua Baris (Maks. 300)</SelectItem>
                   <SelectItem value="100">100 Baris Pertama</SelectItem>
                   <SelectItem value="50">50 Baris Pertama</SelectItem>
                   <SelectItem value="20">20 Baris Pertama</SelectItem>
@@ -350,7 +350,7 @@ export function ExportView() {
             <div className="flex items-center justify-between">
               <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500 flex items-center gap-1.5">
                 <Filter className="size-3.5 text-violet-600" />
-                3. Kolom &amp; Atribut
+                3. Pilih Kolom
               </CardTitle>
               <div className="flex items-center gap-1 text-[11px]">
                 <button
@@ -366,7 +366,7 @@ export function ExportView() {
                   onClick={() => handleSelectAll(false)}
                   className="text-neutral-500 hover:underline cursor-pointer"
                 >
-                  Hapus
+                  Reset
                 </button>
               </div>
             </div>
@@ -407,20 +407,20 @@ export function ExportView() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <CardTitle className="text-base font-semibold">
-                  Pratinjau Keluaran Data
+                  Preview Data Ekspor
                 </CardTitle>
                 <CardDescription className="text-xs">
-                  {processedData.length} baris data disiapkan untuk ekspor ({selectedFormat.toUpperCase()})
+                  {processedData.length} baris data siap diekspor ({selectedFormat.toUpperCase()})
                 </CardDescription>
               </div>
               <TabsList className="grid w-full sm:w-[260px] grid-cols-2">
                 <TabsTrigger value="table" className="text-xs cursor-pointer gap-1.5">
                   <TableIcon className="size-3.5" />
-                  Pratinjau Tabel
+                  Tabel Preview
                 </TabsTrigger>
                 <TabsTrigger value="raw" className="text-xs cursor-pointer gap-1.5">
                   <FileCode className="size-3.5" />
-                  Kode Mentah
+                  Raw Output
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -431,7 +431,7 @@ export function ExportView() {
             <TabsContent value="table" className="m-0">
               {activeColIds.length === 0 ? (
                 <div className="p-8 text-center text-xs text-neutral-500">
-                  Pilih setidaknya 1 kolom di panel konfigurasi atas untuk menampilkan pratinjau tabel.
+                  Pilih minimal 1 kolom untuk melihat tabel preview.
                 </div>
               ) : (
                 <div className="rounded-md border border-neutral-200 dark:border-neutral-800 overflow-x-auto">
@@ -467,7 +467,7 @@ export function ExportView() {
                   </Table>
                   {processedData.length > 8 && (
                     <div className="p-2 text-center text-[11px] text-neutral-400 border-t border-neutral-100 dark:border-neutral-800 bg-neutral-50/30 dark:bg-neutral-900/30">
-                      Menampilkan 8 baris pertama dari total {processedData.length} baris data yang siap diunduh.
+                      Menampilkan 8 baris pertama dari total {processedData.length} baris data.
                     </div>
                   )}
                 </div>

@@ -59,7 +59,7 @@ export function TopNavbar({ activeTab, isRefreshing, onRefresh }: TopNavbarProps
           <span className="text-[10px] text-muted-foreground font-mono tabular-nums">1883</span>
         </div>
 
-        {/* Segarkan Button */}
+        {/* Refresh Button */}
         <Button
           variant="outline"
           size="sm"
@@ -68,7 +68,7 @@ export function TopNavbar({ activeTab, isRefreshing, onRefresh }: TopNavbarProps
           className="h-8 gap-1.5 text-xs cursor-pointer border-border/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
         >
           <RefreshCw className={`size-3.5 ${isRefreshing ? "animate-spin text-emerald-600 dark:text-emerald-400" : ""}`} />
-          <span className="hidden sm:inline">Segarkan</span>
+          <span className="hidden sm:inline">Refresh</span>
         </Button>
 
         {/* Interactive Dark/Light Theme Toggle */}

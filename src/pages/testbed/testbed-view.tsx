@@ -237,14 +237,14 @@ export function TestbedView() {
         <div>
           <div className="flex items-center gap-2">
             <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
-              Testbed Injeksi Data & Benchmark
+              Testbed Trace Replay &amp; Benchmark
             </h2>
             <Badge variant="outline" className="text-xs bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300">
               Trace-Driven Replay (N=300)
             </Badge>
           </div>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Evaluasi komparatif berpasangan (*ceteris paribus*): On-Device ESP32-S3 vs Cloud Server
+            Komparasi Berpasangan: On-Device ESP32-S3 vs Cloud Server
           </p>
         </div>
 
@@ -264,7 +264,7 @@ export function TestbedView() {
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-2">
               <CardTitle className="text-sm font-semibold tracking-wide uppercase text-neutral-500">
-                Konsol Replay Pengujian
+                Trace Replay Controller
               </CardTitle>
               <Badge
                 variant={
@@ -318,7 +318,7 @@ export function TestbedView() {
                 {status === "running" ? (
                   <>
                     <Pause className="size-4" />
-                    <span>Jeda (Pause)</span>
+                    <span>Pause</span>
                   </>
                 ) : (
                   <>
@@ -337,7 +337,7 @@ export function TestbedView() {
                 className="gap-1.5 cursor-pointer text-xs"
               >
                 <SkipForward className="size-3.5" />
-                <span>+1 Sampel (Step)</span>
+                <span>Step (+1)</span>
               </Button>
 
               {/* Reset */}
@@ -361,7 +361,7 @@ export function TestbedView() {
                 className="gap-1.5 cursor-pointer text-xs text-indigo-600 dark:text-indigo-400"
               >
                 <FastForward className="size-3.5" />
-                <span>Langsung Selesai (N=300)</span>
+                <span>Selesaikan Replay (N=300)</span>
               </Button>
             </div>
 
@@ -394,7 +394,7 @@ export function TestbedView() {
                 className="h-8 gap-1.5 text-xs cursor-pointer text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800"
               >
                 <Download className="size-3.5" />
-                <span>Unduh CSV</span>
+                <span>Export CSV</span>
               </Button>
             </div>
           </div>
@@ -554,7 +554,7 @@ export function TestbedView() {
             <CardHeader className="pb-2">
               <CardTitle className="text-base font-semibold">Tabel Log Uji Berpasangan (Ceteris Paribus)</CardTitle>
               <CardDescription className="text-xs">
-                Merekam setiap titik data uji yang diinjeksi secara simultan ke mikrokontroler dan server awan
+                Merekam setiap titik data uji yang diinjeksi secara simultan ke mikrokontroler dan cloud server
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -659,7 +659,7 @@ export function TestbedView() {
                     Spesifikasi Eksekusi Cloud Server
                   </h4>
                   <ul className="text-xs space-y-1.5 text-neutral-700 dark:text-neutral-300">
-                    <li>• Peladen: <strong>Python 3.12 / Scikit-Learn Runtime di Server Awan</strong></li>
+                    <li>• Runtime: <strong>Python 3.12 / Scikit-Learn di Cloud Server</strong></li>
                     <li>• Floating-Point Unit: <strong>Double-Precision (IEEE 754 float64)</strong></li>
                     <li>• Protokol Ingestion: <strong>MQTT via Mosquitto Broker (TCP/IP)</strong></li>
                     <li>• Maksimum Selisih Paritas Teruji: <strong className="text-emerald-600">{stats.maxParityDelta}%</strong></li>

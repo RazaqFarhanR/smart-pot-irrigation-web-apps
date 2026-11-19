@@ -108,7 +108,7 @@ export function SensorView() {
             </Badge>
           </div>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Dinamika fisik kandungan air tanah dan kondisi mikroklimat lingkungan pot cabai
+            Dinamika fisik Kandungan Air dalam Tanah dan mikroklimat pot tanaman cabai
           </p>
         </div>
 
@@ -143,7 +143,7 @@ export function SensorView() {
 
       {/* 2. Quick Stat Overview Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Card 1: Status Kandungan Air Tanah Terkini */}
+        {/* Card 1: Status Kandungan Air dalam Tanah Terkini */}
         <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
@@ -170,7 +170,7 @@ export function SensorView() {
               </Badge>
             </div>
             <p className="mt-1 text-xs text-neutral-500">
-              Rentang terpantau: {summary.minSoil}% s.d. {summary.maxSoil}%
+              Rentang Min/Max: {summary.minSoil}% s.d. {summary.maxSoil}%
             </p>
           </CardContent>
         </Card>
@@ -230,7 +230,7 @@ export function SensorView() {
               {latestPoint?.light_lux.toLocaleString("id-ID")} Lux
             </div>
             <p className="mt-1 text-xs text-neutral-500">
-              Sensor foton BH1750 (Fluks aktif)
+              Sensor intensitas cahaya digital (BH1750)
             </p>
           </CardContent>
         </Card>
@@ -316,7 +316,7 @@ export function SensorView() {
                 stroke="#10b981"
                 strokeWidth={2}
                 fill="url(#soilGradient)"
-                name="Kandungan Air Tanah"
+                name="Kandungan Air dalam Tanah"
               />
             </AreaChart>
           </ChartContainer>
@@ -342,10 +342,10 @@ export function SensorView() {
               <div>
                 <CardTitle className="text-sm font-semibold flex items-center gap-2">
                   <Thermometer className="size-4 text-orange-500" />
-                  Kondisi Termal & Kelembaban Relatif
+                  Suhu Udara &amp; Kelembaban Relatif (RH)
                 </CardTitle>
                 <CardDescription className="text-xs">
-                  Korelasi inversi fisik suhu atmosfer mikroklimat vs RH
+                  Fluktuasi suhu lingkungan (°C) dan kelembaban udara (%)
                 </CardDescription>
               </div>
             </div>
