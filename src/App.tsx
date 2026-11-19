@@ -16,6 +16,7 @@ import { AppSidebar, type NavTabId } from "@/components/layout/app-sidebar"
 import { TopNavbar } from "@/components/layout/top-navbar"
 import { SensorView } from "@/components/sensors/sensor-view"
 import { TestbedView } from "@/components/testbed/testbed-view"
+import { DeployOtaView } from "@/components/ota/deploy-ota-view"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -341,52 +342,7 @@ export default function App() {
 
             {/* View 2: Deploy OTA Tab */}
             {activeTab === "deploy-ota" && (
-              <div className="space-y-4">
-                <div>
-                  <h2 className="text-2xl font-bold tracking-tight">Deploy Model OTA (Over-The-Air)</h2>
-                  <p className="text-sm text-neutral-500">
-                    Perbarui koefisien bobot model regresi linier di ESP32-S3 melalui pesan MQTT dan picu sesi pengujian otomatis.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Model Aktif Saat Ini
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">Ridge Regression</div>
-                      <p className="text-xs text-neutral-500 mt-1">L2 Regularization (α = 10.0)</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Protokol Update
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold text-violet-600">MQTT Parameter OTA</div>
-                      <p className="text-xs text-neutral-500 mt-1">Ukuran paket: ~220 Bytes (Instant Sync)</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-xs text-neutral-400 uppercase tracking-wider">
-                        Target Deployment
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold text-emerald-600">Dual Node (Edge + Cloud)</div>
-                      <p className="text-xs text-neutral-500 mt-1">ESP32-S3 & Python Cloud Worker</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+              <DeployOtaView onNavigateToTestbed={() => setActiveTab("testbed")} />
             )}
 
             {/* View 3: Akurasi Tab */}
