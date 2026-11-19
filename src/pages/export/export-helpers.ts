@@ -1,8 +1,8 @@
-import { generateTraceData, type TraceSample } from "@/components/testbed/mock-trace-data"
-import { generateTelemetryFeed } from "@/components/telemetry/mock-telemetry"
+import { generateTraceData, type TraceSample } from "@/pages/testbed/mock-trace-data"
+import { generateTelemetryFeed } from "@/pages/telemetry/mock-telemetry"
 import type { TelemetryRecord } from "@/types"
-import { modelComparisonTable, type ModelComparisonRow } from "@/components/accuracy/mock-accuracy-data"
-import { mockIrrigationEvents, type IrrigationEvent } from "@/components/irrigation/mock-irrigation-data"
+import { modelComparisonTable, type ModelComparisonRow } from "@/pages/accuracy/mock-accuracy-data"
+import { mockIrrigationEvents, type IrrigationEvent } from "@/pages/irrigation/mock-irrigation-data"
 
 export type ExportDatasetType = "testbed" | "telemetry" | "model-comparison" | "irrigation"
 export type ExportFormatType = "csv" | "json" | "latex"

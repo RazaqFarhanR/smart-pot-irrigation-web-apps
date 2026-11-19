@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme/theme-toggle"
-import type { NavTabId } from "./app-sidebar"
+import { NAVIGATION_ROUTES, type NavTabId } from "@/config/navigation"
 
 interface TopNavbarProps {
   activeTab: NavTabId
@@ -19,22 +19,10 @@ interface TopNavbarProps {
   onRefresh: () => void
 }
 
-const tabTitles: Record<NavTabId, { category: string; title: string }> = {
-  overview: { category: "Monitoring", title: "Overview" },
-  sensor: { category: "Monitoring", title: "Sensor" },
-  telemetri: { category: "Monitoring", title: "Telemetri" },
-  "deploy-ota": { category: "Model & Pengujian", title: "Deploy OTA" },
-  testbed: { category: "Model & Pengujian", title: "Testbed" },
-  benchmark: { category: "Model & Pengujian", title: "Benchmark" },
-  akurasi: { category: "Model & Pengujian", title: "Akurasi" },
-  irigasi: { category: "Model & Pengujian", title: "Irigasi" },
-  "riwayat-sesi": { category: "Sistem", title: "Riwayat Sesi" },
-  perangkat: { category: "Sistem", title: "Perangkat" },
-  "ekspor-data": { category: "Sistem", title: "Ekspor Data" },
-}
-
 export function TopNavbar({ activeTab, isRefreshing, onRefresh }: TopNavbarProps) {
-  const current = tabTitles[activeTab] ?? { category: "System", title: "Dashboard" }
+  const currentRoute = NAVIGATION_ROUTES.find((r) => r.id === activeTab)
+  const category = currentRoute?.category ?? "Monitoring"
+  const title = currentRoute?.label ?? "Overview"
 
   return (
     <header className="sticky top-0 z-30 flex h-14 shrink-0 items-center justify-between gap-2 border-b border-border/80 bg-background/80 px-4 backdrop-blur-md">
@@ -46,13 +34,13 @@ export function TopNavbar({ activeTab, isRefreshing, onRefresh }: TopNavbarProps
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
               <BreadcrumbLink href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-                {current.category}
+                {category}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem>
               <BreadcrumbPage className="text-xs font-semibold text-foreground tracking-tight">
-                {current.title}
+                {title}
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
