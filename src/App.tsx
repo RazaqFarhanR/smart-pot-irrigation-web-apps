@@ -20,6 +20,7 @@ import { DeployOtaView } from "@/components/ota/deploy-ota-view"
 import { DeviceView } from "@/components/device/device-view"
 import { TelemetryView } from "@/components/telemetry/telemetry-view"
 import { AccuracyView } from "@/components/accuracy/accuracy-view"
+import { IrrigationView } from "@/components/irrigation/irrigation-view"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -373,9 +374,13 @@ export default function App() {
               <TelemetryView />
             )}
 
+            {/* View 8: Irrigation View */}
+            {activeTab === "irigasi" && (
+              <IrrigationView />
+            )}
+
             {/* Other Tabs Placeholder */}
-            {(activeTab === "irigasi" ||
-              activeTab === "riwayat-sesi" ||
+            {(activeTab === "riwayat-sesi" ||
               activeTab === "ekspor-data") && (
               <Card className="p-8 text-center border-dashed border-2 border-neutral-200 dark:border-neutral-800">
                 <div className="flex flex-col items-center justify-center space-y-3">
