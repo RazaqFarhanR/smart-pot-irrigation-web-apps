@@ -18,6 +18,7 @@ import { SensorView } from "@/components/sensors/sensor-view"
 import { TestbedView } from "@/components/testbed/testbed-view"
 import { DeployOtaView } from "@/components/ota/deploy-ota-view"
 import { DeviceView } from "@/components/device/device-view"
+import { TelemetryView } from "@/components/telemetry/telemetry-view"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -411,9 +412,13 @@ export default function App() {
               <DeviceView />
             )}
 
+            {/* View 7: Telemetry View */}
+            {activeTab === "telemetri" && (
+              <TelemetryView />
+            )}
+
             {/* Other Tabs Placeholder */}
-            {(activeTab === "telemetri" ||
-              activeTab === "irigasi" ||
+            {(activeTab === "irigasi" ||
               activeTab === "riwayat-sesi" ||
               activeTab === "ekspor-data") && (
               <Card className="p-8 text-center border-dashed border-2 border-neutral-200 dark:border-neutral-800">
