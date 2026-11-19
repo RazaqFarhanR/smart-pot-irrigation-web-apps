@@ -14,6 +14,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar, type NavTabId } from "@/components/layout/app-sidebar"
 import { TopNavbar } from "@/components/layout/top-navbar"
+import { SensorView } from "@/components/sensors/sensor-view"
 import { TestbedView } from "@/components/testbed/testbed-view"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -443,9 +444,13 @@ export default function App() {
               <TestbedView />
             )}
 
+            {/* View 5: Sensor View */}
+            {activeTab === "sensor" && (
+              <SensorView />
+            )}
+
             {/* Other Tabs Placeholder */}
-            {(activeTab === "sensor" ||
-              activeTab === "telemetri" ||
+            {(activeTab === "telemetri" ||
               activeTab === "irigasi" ||
               activeTab === "riwayat-sesi" ||
               activeTab === "perangkat" ||
