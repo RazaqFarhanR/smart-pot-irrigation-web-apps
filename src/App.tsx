@@ -17,6 +17,7 @@ import { TopNavbar } from "@/components/layout/top-navbar"
 import { SensorView } from "@/components/sensors/sensor-view"
 import { TestbedView } from "@/components/testbed/testbed-view"
 import { DeployOtaView } from "@/components/ota/deploy-ota-view"
+import { DeviceView } from "@/components/device/device-view"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -405,11 +406,15 @@ export default function App() {
               <SensorView />
             )}
 
+            {/* View 6: Device View */}
+            {activeTab === "perangkat" && (
+              <DeviceView />
+            )}
+
             {/* Other Tabs Placeholder */}
             {(activeTab === "telemetri" ||
               activeTab === "irigasi" ||
               activeTab === "riwayat-sesi" ||
-              activeTab === "perangkat" ||
               activeTab === "ekspor-data") && (
               <Card className="p-8 text-center border-dashed border-2 border-neutral-200 dark:border-neutral-800">
                 <div className="flex flex-col items-center justify-center space-y-3">
