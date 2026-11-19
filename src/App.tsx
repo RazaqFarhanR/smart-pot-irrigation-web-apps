@@ -113,7 +113,7 @@ export default function App() {
         <AppSidebar activeTab={activeTab} onSelectTab={setActiveTab} />
 
         {/* Main Application Inset */}
-        <SidebarInset className="min-h-screen bg-neutral-50/60 dark:bg-neutral-950 flex flex-col">
+        <SidebarInset className="min-h-screen bg-background flex flex-col">
           {/* Sticky Top Navbar */}
           <TopNavbar
             activeTab={activeTab}
@@ -136,7 +136,7 @@ export default function App() {
                       Pemantauan telemetri waktu-nyata pot tanaman cabai via ESP32-S3
                     </p>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-neutral-400 dark:text-neutral-500 font-mono">
+                  <div className="flex items-center gap-2 text-xs text-neutral-400 dark:text-neutral-500 font-mono tabular-nums">
                     <span>Transmisi Terakhir:</span>
                     <span className="text-neutral-700 dark:text-neutral-300 font-semibold">
                       {new Date(latest.timestamp).toLocaleTimeString("id-ID")}
@@ -147,9 +147,9 @@ export default function App() {
                 {/* 4 Sensor Metric Cards */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {/* Metric 1: Kandungan Air dalam Tanah */}
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
+                  <Card className="border-border/80 shadow-xs bg-card">
                     <CardHeader className="flex flex-row items-center justify-between pb-2">
-                      <CardTitle className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                      <CardTitle className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                         Kandungan Air dalam Tanah
                       </CardTitle>
                       <div className="p-1.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
@@ -157,12 +157,12 @@ export default function App() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                      <div className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-mono tabular-nums">
                         {latest.soil_pct}%
                       </div>
                       <div className="mt-1 flex items-center justify-between text-xs text-neutral-500">
-                        <span>ADC Raw: {latest.soil_raw}</span>
-                        <Badge variant="outline" className="text-[10px] text-emerald-600 border-emerald-200 bg-emerald-50/50">
+                        <span className="font-mono tabular-nums">ADC Raw: {latest.soil_raw}</span>
+                        <Badge variant="outline" className="text-[10px] text-emerald-600 border-emerald-200 bg-emerald-50/50 dark:bg-emerald-950/30 dark:border-emerald-800 dark:text-emerald-300">
                           Optimal (35-70%)
                         </Badge>
                       </div>
@@ -170,9 +170,9 @@ export default function App() {
                   </Card>
 
                   {/* Metric 2: Suhu Lingkungan */}
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
+                  <Card className="border-border/80 shadow-xs bg-card">
                     <CardHeader className="flex flex-row items-center justify-between pb-2">
-                      <CardTitle className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                      <CardTitle className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                         Suhu Lingkungan
                       </CardTitle>
                       <div className="p-1.5 rounded-md bg-orange-500/10 text-orange-500">
@@ -180,19 +180,19 @@ export default function App() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                      <div className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-mono tabular-nums">
                         {latest.temp_c} °C
                       </div>
-                      <p className="mt-1 text-xs text-neutral-500">
+                      <p className="mt-1 text-xs text-muted-foreground">
                         Sensor termal mikroklimat terkalibrasi
                       </p>
                     </CardContent>
                   </Card>
 
                   {/* Metric 3: Kelembaban Udara */}
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
+                  <Card className="border-border/80 shadow-xs bg-card">
                     <CardHeader className="flex flex-row items-center justify-between pb-2">
-                      <CardTitle className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                      <CardTitle className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                         Kelembaban Udara
                       </CardTitle>
                       <div className="p-1.5 rounded-md bg-sky-500/10 text-sky-500">
@@ -200,19 +200,19 @@ export default function App() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                      <div className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-mono tabular-nums">
                         {latest.humidity_pct}%
                       </div>
-                      <p className="mt-1 text-xs text-neutral-500">
+                      <p className="mt-1 text-xs text-muted-foreground">
                         Kelembaban relatif atmosfer mikro
                       </p>
                     </CardContent>
                   </Card>
 
                   {/* Metric 4: Intensitas Cahaya */}
-                  <Card className="border-neutral-200 shadow-xs dark:border-neutral-800 bg-white dark:bg-neutral-900">
+                  <Card className="border-border/80 shadow-xs bg-card">
                     <CardHeader className="flex flex-row items-center justify-between pb-2">
-                      <CardTitle className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                      <CardTitle className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                         Intensitas Cahaya
                       </CardTitle>
                       <div className="p-1.5 rounded-md bg-amber-500/10 text-amber-500">
@@ -220,10 +220,10 @@ export default function App() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                      <div className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-mono tabular-nums">
                         {latest.light_lux.toLocaleString("id-ID")} Lux
                       </div>
-                      <p className="mt-1 text-xs text-neutral-500">
+                      <p className="mt-1 text-xs text-muted-foreground">
                         Fluks radiasi fotosintesis (BH1750)
                       </p>
                     </CardContent>
@@ -307,7 +307,7 @@ export default function App() {
                           <TableRow>
                             <TableHead className="w-16">Seq</TableHead>
                             <TableHead>Waktu Transmisi</TableHead>
-                            <TableHead>Kandungan Air Tanah</TableHead>
+                            <TableHead>Kandungan Air dalam Tanah</TableHead>
                             <TableHead>Suhu (°C)</TableHead>
                             <TableHead>Kelembaban (%)</TableHead>
                             <TableHead>Cahaya (Lux)</TableHead>
@@ -317,16 +317,16 @@ export default function App() {
                         <TableBody>
                           {data.map((row) => (
                             <TableRow key={row.id}>
-                              <TableCell className="font-mono text-xs font-medium">#{row.record_seq}</TableCell>
-                              <TableCell className="text-xs text-neutral-500">
+                              <TableCell className="font-mono tabular-nums text-xs font-medium">#{row.record_seq}</TableCell>
+                              <TableCell className="text-xs text-muted-foreground font-mono tabular-nums">
                                 {new Date(row.timestamp).toLocaleTimeString("id-ID")}
                               </TableCell>
-                              <TableCell className="font-semibold text-emerald-600 dark:text-emerald-400">
+                              <TableCell className="font-semibold text-emerald-600 dark:text-emerald-400 font-mono tabular-nums">
                                 {row.soil_pct}%
                               </TableCell>
-                              <TableCell className="text-xs">{row.temp_c}°C</TableCell>
-                              <TableCell className="text-xs">{row.humidity_pct}%</TableCell>
-                              <TableCell className="text-xs">{row.light_lux} Lux</TableCell>
+                              <TableCell className="text-xs font-mono tabular-nums">{row.temp_c}°C</TableCell>
+                              <TableCell className="text-xs font-mono tabular-nums">{row.humidity_pct}%</TableCell>
+                              <TableCell className="text-xs font-mono tabular-nums">{row.light_lux} Lux</TableCell>
                               <TableCell>
                                 <Badge
                                   variant={row.pump_status === 1 ? "default" : "outline"}

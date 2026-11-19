@@ -286,9 +286,9 @@ export function TestbedView() {
               </Badge>
             </div>
 
-            <div className="flex items-center gap-1.5 text-xs text-neutral-500 font-mono">
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-mono tabular-nums">
               <span>Progress:</span>
-              <span className="font-bold text-neutral-900 dark:text-neutral-100">
+              <span className="font-bold text-foreground">
                 {currentIndex} / {totalSamples} Sampel ({progressPct}%)
               </span>
             </div>

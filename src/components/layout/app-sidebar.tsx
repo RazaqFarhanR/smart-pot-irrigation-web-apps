@@ -61,12 +61,15 @@ export function AppSidebar({
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" className="hover:bg-sidebar-accent cursor-pointer">
-              <div className="flex aspect-square size-9 items-center justify-center rounded-lg bg-emerald-600 text-white shadow-xs">
+              <div className="flex aspect-square size-9 items-center justify-center rounded-lg bg-emerald-700 dark:bg-emerald-600 text-white shadow-xs">
                 <Sprout className="size-5" />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
                   Smart Pot Irrigation
+                </span>
+                <span className="truncate text-[10px] text-muted-foreground font-mono">
+                  AgriEdge IoT • ESP32-S3
                 </span>
               </div>
             </SidebarMenuButton>
@@ -256,16 +259,19 @@ export function AppSidebar({
       <SidebarFooter className="border-t border-sidebar-border p-3">
         <div className="group-data-[collapsible=icon]:hidden space-y-2">
           {/* Quick Connection Status Badge */}
-          <div className="rounded-lg border border-neutral-200/80 bg-neutral-50/80 p-2.5 text-xs dark:border-neutral-800 dark:bg-neutral-900/60">
-            <div className="flex items-center justify-between text-neutral-600 dark:text-neutral-300">
+          <div className="rounded-lg border border-border/70 bg-card/60 p-2.5 text-xs">
+            <div className="flex items-center justify-between text-neutral-700 dark:text-neutral-300">
               <span className="flex items-center gap-1.5 font-medium">
-                <Wifi className="size-3.5 text-emerald-500" /> Broker MQTT
+                <Wifi className="size-3.5 text-emerald-600 dark:text-emerald-400" /> Broker MQTT
               </span>
-              <span className="inline-block size-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+              </span>
             </div>
-            <div className="mt-1 flex items-center justify-between text-[11px] text-neutral-400 dark:text-neutral-500">
+            <div className="mt-1 flex items-center justify-between text-[11px] text-muted-foreground font-mono tabular-nums">
               <span>Port 1883</span>
-              <span className="font-mono">RTT: 12ms</span>
+              <span>RTT 12ms</span>
             </div>
           </div>
 
